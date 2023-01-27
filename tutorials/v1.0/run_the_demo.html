@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Run the demo</title>
+    
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+<link href="_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Run a model with config files" href="run_model_with_config_file.html" />
+    <link rel="prev" title="Install FuxiCTR" href="install_fuxictr.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="None">
+    
+
+    <!-- Google Analytics -->
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
+<!-- Checkboxes to toggle the left sidebar -->
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
+<label class="overlay overlay-navbar" for="__navigation">
+    <div class="visually-hidden">Toggle navigation sidebar</div>
+</label>
+<!-- Checkboxes to toggle the in-page toc -->
+<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
+<label class="overlay overlay-pagetoc" for="__page-toc">
+    <div class="visually-hidden">Toggle in-page Table of Contents</div>
+</label>
+<!-- Headers at the top -->
+<div class="announcement header-item noprint"></div>
+<div class="header header-item noprint"></div>
+
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<!-- Sidebar -->
+<div class="bd-sidebar noprint" id="site-navigation">
+    <div class="bd-sidebar__content">
+        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+        
+      
+      
+      <img src="_static/logo.png" class="logo" alt="logo">
+      
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="index.html">
+                    FuxiCTR v1.0
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading">
+ <span class="caption-text">
+  Tutorials
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="install_fuxictr.html">
+   Install FuxiCTR
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Run the demo
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="run_model_with_config_file.html">
+   Run a model with config files
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="run_model_with_h5_input.html">
+   Run a model with h5 data as input
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="how_to_make_configurations.html">
+   How to make configurations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="tune_model_via_grid_search.html">
+   Tune a model via grid search
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav></div>
+        <div class="bd-sidebar__bottom">
+             <!-- To handle the deprecated key -->
+            
+            <div class="navbar_extra_footer">
+            <img src="https://openbenchmark.github.io/BARS/img/wechat.jpg" title="Join Wechat Group"><br>Join Wechat Group</br>
+            </div>
+            
+        </div>
+    </div>
+    <div id="rtd-footer-container"></div>
+</div>
+
+
+          
+
+
+          
+<!-- A tiny helper pixel to detect if we've scrolled -->
+<div class="sbt-scroll-pixel-helper"></div>
+<!-- Main content -->
+<div class="col py-0 content-container">
+    
+    <div class="header-article row sticky-top noprint">
+        
+
+
+
+<div class="col py-1 d-flex header-article-main">
+    <div class="header-article__left">
+        
+        <label for="__navigation"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="right"
+title="Toggle navigation"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-bars"></i>
+  </span>
+
+</label>
+
+        
+    </div>
+    <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/xue-pai/FuxiCTR/main?urlpath=tree/v2.0/run_the_demo.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+<button onclick="toggleFullScreen()"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="bottom"
+title="Fullscreen mode"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+<a href="https://github.com/xue-pai/FuxiCTR/tree/main/tutorials"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="bottom"
+title="Source repository"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+<div class="menu-dropdown menu-dropdown-download-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Download this page">
+      <i class="fas fa-download"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="_sources/run_the_demo.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download source file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
+      <li>
+        
+<button onclick="printPdf(this)"
+  class="headerbtn"
+  data-toggle="tooltip"
+data-placement="left"
+title="Print to PDF"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="headerbtn__text-container">.pdf</span>
+</button>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
+    </div>
+</div>
+
+<!-- Table of contents -->
+<div class="col-md-3 bd-toc show noprint">
+</div>
+    </div>
+    <div class="article row">
+        <div class="col pl-md-3 pl-lg-5 content-container">
+            <!-- Table of contents that is only displayed when printing the page -->
+            <div id="jb-print-docs-body" class="onlyprint">
+                <h1>Run the demo</h1>
+                <!-- Table of contents -->
+                <div id="print-main-content">
+                    <div id="jb-print-toc">
+                        
+                    </div>
+                </div>
+            </div>
+            <main id="main-content" role="main">
+                
+              <div>
+                
+  <div class="tex2jax_ignore mathjax_ignore section" id="run-the-demo">
+<h1>Run the demo<a class="headerlink" href="#run-the-demo" title="Permalink to this headline">#</a></h1>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The tutorial is for FuxiCTR v1.0.</p>
+</div>
+<p>We provide <a class="reference external" href="https://github.com/xue-pai/FuxiCTR/tree/v1.0.2/demo">multiple demo scripts</a> to run a given model on the tiny dataset. Please follow these examples to get started. The code workflow is structured as follows:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Set data params and model params</span>
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="o">...</span><span class="p">}</span>
+
+<span class="c1"># Set the feature encoding specs</span>
+<span class="n">feature_encoder</span> <span class="o">=</span> <span class="n">FeatureEncoder</span><span class="p">(</span><span class="n">feature_cols</span><span class="p">,</span> <span class="n">label_col</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span> <span class="c1"># define the feature encoder</span>
+<span class="n">feature_encoder</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="o">...</span><span class="p">)</span> <span class="c1"># fit and transfrom the data</span>
+
+<span class="c1"># Load data generators</span>
+<span class="n">train_gen</span><span class="p">,</span> <span class="n">valid_gen</span><span class="p">,</span> <span class="n">test_gen</span> <span class="o">=</span> <span class="n">data_generator</span><span class="p">(</span><span class="n">feature_encoder</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Define a model</span>
+<span class="n">model</span> <span class="o">=</span> <span class="n">DeepFM</span><span class="p">(</span><span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Train the model</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit_generator</span><span class="p">(</span><span class="n">train_gen</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="n">valid_gen</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+
+<span class="c1"># Evaluation</span>
+<span class="n">model</span><span class="o">.</span><span class="n">evaluate_generator</span><span class="p">(</span><span class="n">test_gen</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<p>.</p>
+<p>In the following, we show the demo <code class="docutils literal notranslate"><span class="pre">DeepFM_demo.py</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">from</span> <span class="nn">fuxictr.datasets</span> <span class="kn">import</span> <span class="n">data_generator</span>
+<span class="kn">from</span> <span class="nn">fuxictr.datasets.taobao</span> <span class="kn">import</span> <span class="n">FeatureEncoder</span>
+<span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="kn">from</span> <span class="nn">fuxictr.utils</span> <span class="kn">import</span> <span class="n">set_logger</span><span class="p">,</span> <span class="n">print_to_json</span>
+<span class="kn">import</span> <span class="nn">logging</span>
+<span class="kn">from</span> <span class="nn">fuxictr.pytorch.models</span> <span class="kn">import</span> <span class="n">DeepFM</span>
+<span class="kn">from</span> <span class="nn">fuxictr.pytorch.utils</span> <span class="kn">import</span> <span class="n">seed_everything</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>After importing the required packages, one needs to define the params dict for DeepFM.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_cols</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;userid&quot;</span><span class="p">,</span><span class="s2">&quot;adgroup_id&quot;</span><span class="p">,</span><span class="s2">&quot;pid&quot;</span><span class="p">,</span><span class="s2">&quot;cate_id&quot;</span><span class="p">,</span><span class="s2">&quot;campaign_id&quot;</span><span class="p">,</span><span class="s2">&quot;customer&quot;</span><span class="p">,</span><span class="s2">&quot;brand&quot;</span><span class="p">,</span><span class="s2">&quot;cms_segid&quot;</span><span class="p">,</span>
+                          <span class="s2">&quot;cms_group_id&quot;</span><span class="p">,</span><span class="s2">&quot;final_gender_code&quot;</span><span class="p">,</span><span class="s2">&quot;age_level&quot;</span><span class="p">,</span><span class="s2">&quot;pvalue_level&quot;</span><span class="p">,</span><span class="s2">&quot;shopping_level&quot;</span><span class="p">,</span><span class="s2">&quot;occupation&quot;</span><span class="p">],</span>
+                 <span class="s1">&#39;active&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span> <span class="s1">&#39;dtype&#39;</span><span class="p">:</span> <span class="s1">&#39;str&#39;</span><span class="p">,</span> <span class="s1">&#39;type&#39;</span><span class="p">:</span> <span class="s1">&#39;categorical&#39;</span><span class="p">}]</span>
+<span class="n">label_col</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;clk&#39;</span><span class="p">,</span> <span class="s1">&#39;dtype&#39;</span><span class="p">:</span> <span class="nb">float</span><span class="p">}</span>
+
+<span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;model_id&#39;</span><span class="p">:</span> <span class="s1">&#39;DeepFM_demo&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;dataset_id&#39;</span><span class="p">:</span> <span class="s1">&#39;tiny_data_demo&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;train_data&#39;</span><span class="p">:</span> <span class="s1">&#39;../data/tiny_data/train_sample.csv&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;valid_data&#39;</span><span class="p">:</span> <span class="s1">&#39;../data/tiny_data/valid_sample.csv&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;test_data&#39;</span><span class="p">:</span> <span class="s1">&#39;../data/tiny_data/test_sample.csv&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;model_root&#39;</span><span class="p">:</span> <span class="s1">&#39;../checkpoints/&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;data_root&#39;</span><span class="p">:</span> <span class="s1">&#39;../data/&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;feature_cols&#39;</span><span class="p">:</span> <span class="n">feature_cols</span><span class="p">,</span>
+          <span class="s1">&#39;label_col&#39;</span><span class="p">:</span> <span class="n">label_col</span><span class="p">,</span>
+          <span class="s1">&#39;embedding_regularizer&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s1">&#39;net_regularizer&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s1">&#39;hidden_units&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">],</span>
+          <span class="s1">&#39;hidden_activations&#39;</span><span class="p">:</span> <span class="s2">&quot;relu&quot;</span><span class="p">,</span>
+          <span class="s1">&#39;learning_rate&#39;</span><span class="p">:</span> <span class="mf">1e-3</span><span class="p">,</span>
+          <span class="s1">&#39;net_dropout&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s1">&#39;batch_norm&#39;</span><span class="p">:</span> <span class="kc">False</span><span class="p">,</span>
+          <span class="s1">&#39;optimizer&#39;</span><span class="p">:</span> <span class="s1">&#39;adam&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;task&#39;</span><span class="p">:</span> <span class="s1">&#39;binary_classification&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;loss&#39;</span><span class="p">:</span> <span class="s1">&#39;binary_crossentropy&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;metrics&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;logloss&#39;</span><span class="p">,</span> <span class="s1">&#39;AUC&#39;</span><span class="p">],</span>
+          <span class="s1">&#39;min_categr_count&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s1">&#39;embedding_dim&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+          <span class="s1">&#39;batch_size&#39;</span><span class="p">:</span> <span class="mi">16</span><span class="p">,</span>
+          <span class="s1">&#39;epochs&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+          <span class="s1">&#39;shuffle&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+          <span class="s1">&#39;seed&#39;</span><span class="p">:</span> <span class="mi">2019</span><span class="p">,</span>
+          <span class="s1">&#39;monitor&#39;</span><span class="p">:</span> <span class="s1">&#39;AUC&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;monitor_mode&#39;</span><span class="p">:</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;use_hdf5&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+          <span class="s1">&#39;pickle_feature_encoder&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+          <span class="s1">&#39;save_best_only&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+          <span class="s1">&#39;every_x_epochs&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s1">&#39;patience&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+          <span class="s1">&#39;workers&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+          <span class="s1">&#39;verbose&#39;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+          <span class="s1">&#39;version&#39;</span><span class="p">:</span> <span class="s1">&#39;pytorch&#39;</span><span class="p">,</span>
+          <span class="s1">&#39;gpu&#39;</span><span class="p">:</span> <span class="o">-</span><span class="mi">1</span><span class="p">}</span>
+
+<span class="c1"># Set the logger and random seed</span>
+<span class="n">set_logger</span><span class="p">(</span><span class="n">params</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;Start the demo...&#39;</span><span class="p">)</span>
+<span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">print_to_json</span><span class="p">(</span><span class="n">params</span><span class="p">))</span>
+<span class="n">seed_everything</span><span class="p">(</span><span class="n">seed</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;seed&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then set the FeatureEncoder to fit the training data and encode the raw features (e.g., normalizing continious values and mapping/reindex categorical features) from csv files.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">feature_encoder</span> <span class="o">=</span> <span class="n">FeatureEncoder</span><span class="p">(</span><span class="n">feature_cols</span><span class="p">,</span> 
+                                 <span class="n">label_col</span><span class="p">,</span> 
+                                 <span class="n">dataset_id</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;dataset_id&#39;</span><span class="p">],</span> 
+                                 <span class="n">data_root</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s2">&quot;data_root&quot;</span><span class="p">],</span>
+                                 <span class="n">version</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;version&#39;</span><span class="p">])</span>
+<span class="n">feature_encoder</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">train_data</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;train_data&#39;</span><span class="p">],</span> 
+                    <span class="n">min_categr_count</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;min_categr_count&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Preprocess the csv files to h5 files and get the data generators ready for train/validation/test. Note that the h5 files can be reused for subsequent experiments directly.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">train_gen</span><span class="p">,</span> <span class="n">valid_gen</span><span class="p">,</span> <span class="n">test_gen</span> <span class="o">=</span> <span class="n">data_generator</span><span class="p">(</span><span class="n">feature_encoder</span><span class="p">,</span>
+                                                <span class="n">train_data</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;train_data&#39;</span><span class="p">],</span>
+                                                <span class="n">valid_data</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;valid_data&#39;</span><span class="p">],</span>
+                                                <span class="n">test_data</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;test_data&#39;</span><span class="p">],</span>
+                                                <span class="n">batch_size</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;batch_size&#39;</span><span class="p">],</span>
+                                                <span class="n">shuffle</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;shuffle&#39;</span><span class="p">],</span>
+                                                <span class="n">use_hdf5</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;use_hdf5&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Initialize a DeepFM model and fit the model with the training and validation data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">model</span> <span class="o">=</span> <span class="n">DeepFM</span><span class="p">(</span><span class="n">feature_encoder</span><span class="o">.</span><span class="n">feature_map</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">fit_generator</span><span class="p">(</span><span class="n">train_gen</span><span class="p">,</span> <span class="n">validation_data</span><span class="o">=</span><span class="n">valid_gen</span><span class="p">,</span> <span class="n">epochs</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;epochs&#39;</span><span class="p">],</span>
+                    <span class="n">verbose</span><span class="o">=</span><span class="n">params</span><span class="p">[</span><span class="s1">&#39;verbose&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Reload the saved best model checkpoint for testing.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s1">&#39;***** validation/test results *****&#39;</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">load_weights</span><span class="p">(</span><span class="n">model</span><span class="o">.</span><span class="n">checkpoint</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">evaluate_generator</span><span class="p">(</span><span class="n">valid_gen</span><span class="p">)</span>
+<span class="n">model</span><span class="o">.</span><span class="n">evaluate_generator</span><span class="p">(</span><span class="n">test_gen</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+            </main>
+            <footer class="footer-article noprint">
+                
+    <!-- Previous / next buttons -->
+<div class='prev-next-area'>
+    <a class='left-prev' id="prev-link" href="install_fuxictr.html" title="previous page">
+        <i class="fas fa-angle-left"></i>
+        <div class="prev-next-info">
+            <p class="prev-next-subtitle">previous</p>
+            <p class="prev-next-title">Install FuxiCTR</p>
+        </div>
+    </a>
+    <a class='right-next' id="next-link" href="run_model_with_config_file.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Run a model with config files</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
+    </a>
+</div>
+            </footer>
+        </div>
+    </div>
+    <div class="footer-content row">
+        <footer class="col footer"><p>
+  
+    By The XUEPAI Community<br/>
+  
+      &copy; Copyright 2023.<br/>
+</p>
+        </footer>
+    </div>
+    
+</div>
+
+
+      </div>
+    </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+
+
+  </body>
+</html>
