@@ -16,18 +16,24 @@
       return 0;
     }
 
-    function extractVersions(html) {
+    function extractDirs(html) {
       const parser = new DOMParser();
       const doc = parser.parseFromString(html, 'text/html');
-      const versions = [];
+      const dirs = [];
       for (const a of doc.querySelectorAll('a')) {
         const href = (a.getAttribute('href') || '').replace(/\/$/, '');
-        if (/^v\d+(\.\d+)*$/.test(href)) versions.push(href);
+        if (href === 'latest' || /^v\d+(\.\d+)*$/.test(href)) dirs.push(href);
       }
-      return versions;
+      return dirs;
     }
 
-    function redirectToLatest(versions) {
+    function redirectToTarget(dirs) {
+      if (!dirs.length) throw new Error('No version directories found');
+      if (dirs.includes('latest')) {
+        location.replace('./latest/');
+        return;
+      }
+      const versions = dirs.filter(d => /^v\d+/.test(d));
       if (!versions.length) throw new Error('No version directories found');
       versions.sort(compareVersions);
       location.replace('./' + versions[versions.length - 1] + '/');
@@ -38,8 +44,8 @@
     fetch('./')
       .then(r => r.ok ? r.text() : Promise.reject(new Error('Directory listing unavailable')))
       .then(html => {
-        const versions = extractVersions(html);
-        if (versions.length) redirectToLatest(versions);
+        const dirs = extractDirs(html);
+        if (dirs.length) redirectToTarget(dirs);
         else throw new Error('No versions found in directory listing');
       })
       .catch(err => {
@@ -47,10 +53,10 @@
         return fetch('https://api.github.com/repos/fuxictr/fuxictr.github.io/contents/')
           .then(r => r.ok ? r.json() : Promise.reject(new Error('GitHub API error: ' + r.status)))
           .then(data => {
-            const versions = (data || [])
-              .filter(item => item.type === 'dir' && /^v\d+(\.\d+)*$/.test(item.name))
+            const dirs = (data || [])
+              .filter(item => item.type === 'dir' && (item.name === 'latest' || /^v\d+(\.\d+)*$/.test(item.name)))
               .map(item => item.name);
-            redirectToLatest(versions);
+            redirectToTarget(dirs);
           });
       })
       .catch(err => {
