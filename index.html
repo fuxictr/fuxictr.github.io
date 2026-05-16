@@ -1,7 +1,65 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<html> 
-<head> <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"> 
-<title>FuxiCTR Tutorials</title> <script src="javascripts/facebox.js" type="text/javascript"></script> <script language="javascript">location.replace("./v2.0")</script> 
-</head> 
-<body></body> 
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>FuxiCTR Tutorials</title>
+  <script>
+    // Semantic version comparison (e.g., v1.10 > v1.2)
+    function compareVersions(a, b) {
+      const parse = v => v.replace(/^v/, '').split('.').map(Number);
+      const va = parse(a), vb = parse(b);
+      const len = Math.max(va.length, vb.length);
+      for (let i = 0; i < len; i++) {
+        const na = va[i] || 0, nb = vb[i] || 0;
+        if (na !== nb) return na - nb;
+      }
+      return 0;
+    }
+
+    function extractVersions(html) {
+      const parser = new DOMParser();
+      const doc = parser.parseFromString(html, 'text/html');
+      const versions = [];
+      for (const a of doc.querySelectorAll('a')) {
+        const href = (a.getAttribute('href') || '').replace(/\/$/, '');
+        if (/^v\d+(\.\d+)*$/.test(href)) versions.push(href);
+      }
+      return versions;
+    }
+
+    function redirectToLatest(versions) {
+      if (!versions.length) throw new Error('No version directories found');
+      versions.sort(compareVersions);
+      location.replace('./' + versions[versions.length - 1] + '/');
+    }
+
+    // Try directory listing first (works on local dev servers with autoindex),
+    // then fall back to GitHub API (works on GitHub Pages).
+    fetch('./')
+      .then(r => r.ok ? r.text() : Promise.reject(new Error('Directory listing unavailable')))
+      .then(html => {
+        const versions = extractVersions(html);
+        if (versions.length) redirectToLatest(versions);
+        else throw new Error('No versions found in directory listing');
+      })
+      .catch(err => {
+        console.log('Directory listing failed, trying GitHub API:', err);
+        return fetch('https://api.github.com/repos/fuxictr/fuxictr.github.io/contents/')
+          .then(r => r.ok ? r.json() : Promise.reject(new Error('GitHub API error: ' + r.status)))
+          .then(data => {
+            const versions = (data || [])
+              .filter(item => item.type === 'dir' && /^v\d+(\.\d+)*$/.test(item.name))
+              .map(item => item.name);
+            redirectToLatest(versions);
+          });
+      })
+      .catch(err => {
+        console.error('Failed to find latest version:', err);
+        document.body.innerHTML = '<h1>Error</h1><p>Failed to detect the latest version automatically. Please navigate manually.</p>';
+      });
+  </script>
+</head>
+<body>
+  <p>Detecting the latest version...</p>
+</body>
 </html> 
