@@ -377,7 +377,7 @@
 <li><p><strong>splitter</strong>: optional, how to split the sequence feature during preprocessing; the space “ “ is used by default.</p></li>
 <li><p><strong>max_len</strong>: optional, the max length set to pad or truncate the sequence features. If not specified, the max length of all the training samples will be used.</p></li>
 <li><p><strong>padding</strong>: optional, “pre” | “post”, either pre padding or post padding the sequence. If “pre” is applied, the sequence will be chunked or padded from the left of the sequence.</p></li>
-<li><p><strong>na_value</strong>: optional, what value used to fill the missing entries of a field; “” is used by default.</p></li>
+<li><p><strong>fill_na</strong>: optional, what value used to fill the missing entries of a field; “” is used by default.</p></li>
 <li><p><strong>preprocess</strong>’: optional, which defines the function to preprocess the feature column. The function needs to be defined as a class method of features.FeatureEncoder. See the example: <a class="github reference external" href="https://github.com/xue-pai/FuxiCTR/blob/main/fuxictr/datasets/criteo.py#L25">xue-pai/FuxiCTR</a></p></li>
 <li><p><strong>normalizer</strong>: optional, “StandardScaler” | “MinMaxScaler”, which is applied for numeric features.</p></li>
 </ul>
